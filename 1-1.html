@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #contrel {
+            margin: 0 auto;
+            height: 50px;
+            /*background-color: #ff717d;*/
+            text-align: center;
+        }
+
+        #display {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            margin: 0 auto;
+            /*display: block;*/
+        }
+    </style>
+</head>
+<body>
+<div id="contrel">
+    <input type="button" value="变宽">
+    <input type="button" value="变高">
+    <input type="button" value="变色">
+    <input type="button" value="隐藏">
+    <input type="button" value="重置">
+</div>
+<div id="display"></div>
+<script>
+    // var inputs = document.getElementsByTagName('input');
+    var display = document.getElementById('display');
+    var contrel = document.getElementById('contrel');
+    contrel.addEventListener('click', function (event) {
+        switch (event.target.value) {
+            case '变宽':
+                display.style.width = '250px';
+                break;
+            case '变高':
+                display.style.height = '250px';
+                break;
+            case '变色':
+                display.style.backgroundColor = 'red';
+                break;
+            case '隐藏':
+                display.style.display = "none";
+                break;
+            case '重置':
+                display.style.cssText = "";
+                // display.style.display = "block";
+                // display.style.width = '100px';
+                // display.style.height = '100px';
+                // display.style.backgroundColor = 'black';
+                break;
+        }
+
+    })
+</script>
+</body>
+</html>
